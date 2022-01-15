@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Popup } from 'react-leaflet'
-export default class CustomPopup {
+
+export default class CustomPopup extends Component{
     render(){
         let { country, total_cases, daily_cases, total_deaths, recovery_rate } = this.props;
         return (

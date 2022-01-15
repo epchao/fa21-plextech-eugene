@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import CustomPopup from './Popup';
 export default class Map extends Component{
     constructor(){
@@ -39,15 +39,15 @@ export default class Map extends Component{
     render(){
         return(
             <div>
-                <MapContainer center={[0,0]} zoom={0} scrollWheelZoom={false} className="App">
+                <MapContainer center={[20,0]} zoom={2} scrollWheelZoom={false} className="mapcontainer">
                     <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     {
-                        Object.keys(this.state.countries).map((key, i) => 
-                        {
-                            <Marker position = {[this.state.countries.lat, this.state.countries.long]}>
+                        Object.keys(this.state.countries).map((key, i) => {
+                        return (
+                            <Marker position = {[this.state.countries[key].lat, this.state.countries[key].long]}>
                                 <CustomPopup 
                                 country = {key}
                                 total_cases = {this.state.countries[key].cases}
@@ -56,7 +56,7 @@ export default class Map extends Component{
                                 recovery_rate = {this.state.countries[key].recovery_rate}
                                 />
                             </Marker>
-                        }
+                        )}
                     )}
                 </MapContainer>
             </div>

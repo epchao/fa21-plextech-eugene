@@ -1,5 +1,12 @@
-.App {
-  height: 200px;
+/* MAP */
+.map {
+  padding: 2rem;
+}
+
+.mapcontainer {
+  margin: 0 auto;
+  height: 600px;
+  max-width: 1200px;
 }
 
 /* CARDS */
