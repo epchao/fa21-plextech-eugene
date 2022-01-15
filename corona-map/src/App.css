@@ -1,0 +1,34 @@
+.App {
+  height: 200px;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  padding: 4rem;
+  margin: auto;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.data {
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.graph {
+  display: flex;
+  max-width: 900;
+}
+
+
